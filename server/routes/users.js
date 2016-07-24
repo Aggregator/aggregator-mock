@@ -4,22 +4,12 @@ import _ from 'lodash'
 import faker from 'faker'
 var chance = require('chance').Chance()
 
-const pipelineNames = [
-  'Front End',
-  'Back End',
-  'Web',
-  'Mobile',
-  'Hybrid',
-  'Android',
-  'iOS'
-]
-
-const pipelinesLength = pipelineNames.length
-
-const pipelines = _.times(pipelinesLength, function (i) {
+const users = _.times(10, function () {
   return {
     id: faker.random.uuid(),
-    name: pipelineNames[i],
+    email: faker.internet.email(),
+    username: faker.internet.userName(),
+    displayName: faker.name.findName(),
     active: chance.bool({
       likelihood: 75
     })
@@ -28,8 +18,7 @@ const pipelines = _.times(pipelinesLength, function (i) {
 
 const router = express.Router()
 router.get('/', function (req, res, next) {
-  res.json(pipelines)
+  res.json(users)
   next()
 })
-
 module.exports = router

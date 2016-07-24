@@ -3,6 +3,9 @@ import compression from 'compression'
 
 import pipelines from './routes/pipelines'
 import projects from './routes/projects'
+import stages from './routes/stages'
+import states from './routes/states'
+import users from './routes/users'
 
 var app = express()
 app.use(compression())
@@ -20,4 +23,7 @@ app.listen(app.get('port'), () => console.log(`server is up ${app.get('port')}`)
 app.use(express.static('public'))
 app.use('/pipelines', pipelines)
 app.use('/projects', projects)
+app.use('/stages', stages)
+app.use('/states', states)
+app.use('/users', users)
 
