@@ -7,9 +7,10 @@ import stages from './routes/stages'
 import states from './routes/states'
 import users from './routes/users'
 
-var app = express()
+const PORT = process.env.PORT || 3000
+
+const app = express()
 app.use(compression())
-app.set('port', process.env.PORT || 3000)
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
@@ -18,8 +19,6 @@ app.use(function (req, res, next) {
   next()
 })
 
-app.listen(app.get('port'), () => console.log(`server is up ${app.get('port')}`))
-
 app.use(express.static('public'))
 app.use('/pipelines', pipelines)
 app.use('/projects', projects)
@@ -27,3 +26,4 @@ app.use('/stages', stages)
 app.use('/states', states)
 app.use('/users', users)
 
+app.listen(PORT)

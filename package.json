@@ -2,7 +2,7 @@
   "name": "aggregator-mock",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "babel": {
     "presets": [
       "es2015"
@@ -11,7 +11,7 @@
   "scripts": {
     "format": "standard ./server/**/*.js",
     "lint": "eslint --fix ./server/**/*.js",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
