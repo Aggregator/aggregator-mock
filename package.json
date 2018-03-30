@@ -39,6 +39,6 @@
     "babel-eslint": "^6.1.2",
     "eslint": "^2.1.0",
     "eslint-plugin-filenames": "^1.1.0",
-    "standard": "^7.1.2"
+    "standard": "^11.0.0"
   }
 }
